@@ -1,0 +1,3 @@
+[submodule "grouplistwidget"]
+	path = grouplistwidget
+	url = git@github.com:pile-contributors/grouplistwidget.git
