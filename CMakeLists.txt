@@ -2,14 +2,14 @@
 #
 # Introduction
 # ------------
-# 
-# This file is the main file for the grouplistwidget-helpers. The project follows 
+#
+# This file is the main file for the grouplistwidget-helpers. The project follows
 # the pattern laid out at http://pile-contributors.github.io/
 # for a `pile-helpers` repository.
 #
 # Usage
 # -----
-# 
+#
 # You can use the resources in this project to understand this pile,
 # to use it as a model for your own piles or to improve and test this pile.
 #
@@ -45,6 +45,7 @@ find_package(Qt5 COMPONENTS Core)
 if(Qt5Core_FOUND)
     include_directories(
          ${Qt5Core_INCLUDE_DIRS})
+    set (CMAKE_AUTOMOC ON)
 endif()
 
 if(INCLUDE_PILE_SOURCES_DIRECTLY)

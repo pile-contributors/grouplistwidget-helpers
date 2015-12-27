@@ -38,3 +38,6 @@ target_link_libraries(test_basic
 add_test(
     NAME test_basic
     COMMAND $<TARGET_FILE:test_basic>)
+
+add_subdirectory("unit")
+add_subdirectory("integration")
