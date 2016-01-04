@@ -1,3 +1,12 @@
+/**
+ * \file tests/integration/example_02.cc
+ * \brief GUI example using a custom model presenting employees
+ *
+ * The model features a dynamically generated icon for each item.
+ *
+ * The example does not use the list delegate (GroupListDelegate).
+ */
+
 #include <grouplistwidget/grouplistwidget-config.h>
 
 #include "../testhelpers.h"
@@ -10,6 +19,7 @@
 #include <QString>
 
 
+/* ------------------------------------------------------------------------- */
 class GroupDerivedModel : public GroupModel {
 
 public:
@@ -44,39 +54,14 @@ public:
     }
 
 }; // GroupDerivedModel
+/* ========================================================================= */
 
-
-
-
+/* ------------------------------------------------------------------------- */
 int main (int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    // create a model
-    QStandardItemModel * model = new QStandardItemModel ();
-    setEmployeModel (model);
-
-    createEmploye (model, "John", "Smith", 24, false, "Security");
-    createEmploye (model, "Michiko", "Bernard ", 27, true, "Mechanic");
-    createEmploye (model, "Mistie", "Lucian ", 25, true, "Mechanic");
-    createEmploye (model, "Tawanna", "Bushway ", 24, true, "Security");
-    createEmploye (model, "Ashlie", "Rampton ", 45, true, "Security");
-    createEmploye (model, "Erich", "Pitkin ", 53, false, "Mechanic");
-    createEmploye (model, "Dexter", "Kinchen ", 32, false, "Mechanic");
-    createEmploye (model, "Aleta", "Valliere ", 24, true, "Driver");
-    createEmploye (model, "Meridith", "Bohling ", 24, true, "Mechanic");
-    createEmploye (model, "Gertude", "Honore ", 45, true, "Driver");
-    createEmploye (model, "Dorthey", "Hysmith ", 35, true, "Mechanic");
-    createEmploye (model, "Odilia", "Bronson ", 24, true, "Mechanic");
-    createEmploye (model, "Annita", "Taitt ", 73, true, "Security");
-    createEmploye (model, "Les", "Quackenbush ", 24, false, "Security");
-    createEmploye (model, "Hanna", "Infantino ", 18, true, "Driver");
-    createEmploye (model, "Malinda", "Springs ", 24, true, "Mechanic");
-    createEmploye (model, "Claudia", "Lingle ", 73, true, "Driver");
-    createEmploye (model, "Lory", "Weatherhead ", 20, true, "Mechanic");
-    createEmploye (model, "Cammy", "Chaisson ", 24, true, "Mechanic");
-    createEmploye (model, "Gene", "Petrucci ", 18, false, "Security");
-    createEmploye (model, "Kaleigh", "Brockman ", 24, true, "Driver");
+    QStandardItemModel * model = createEmployeModel ();
 
     GroupDerivedModel * internal_model = new GroupDerivedModel();
     internal_model->setPixmapColumn (0);
@@ -92,3 +77,4 @@ int main (int argc, char *argv[])
     delete widget; // all associated resources are freed
     return result;
 }
+/* ========================================================================= */

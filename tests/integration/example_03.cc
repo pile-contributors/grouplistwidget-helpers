@@ -1,3 +1,11 @@
+/**
+ * \file tests/integration/example_03.cc
+ * \brief GUI example using a custom model with random images.
+ *
+ * The example does not use the list delegate (GroupListDelegate).
+ *
+ */
+
 #include <grouplistwidget/grouplistwidget-config.h>
 
 #include "../testhelpers.h"
@@ -9,6 +17,7 @@
 #include <QStandardItem>
 #include <QString>
 
+/* ------------------------------------------------------------------------- */
 int main (int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -36,9 +45,8 @@ int main (int argc, char *argv[])
     m->setPixmapColumn (0);
     widget->show();
 
-
-
     int result = a.exec();
     delete widget; // all associated resources are freed
     return result;
 }
+/* ========================================================================= */

@@ -1,3 +1,10 @@
+/**
+ * \file tests/integration/example_01.cc
+ * \brief GUI example using a text-only standard model
+ *
+ * The example does not use the list delegate (GroupListDelegate).
+ */
+
 #include <grouplistwidget/grouplistwidget-config.h>
 
 #include "../testhelpers.h"
@@ -8,6 +15,7 @@
 #include <QStandardItem>
 #include <QString>
 
+/* ------------------------------------------------------------------------- */
 int main (int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -37,3 +45,4 @@ int main (int argc, char *argv[])
     delete widget; // all associated resources are freed
     return result;
 }
+/* ========================================================================= */
